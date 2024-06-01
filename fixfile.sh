@@ -1,3 +1,3 @@
 sudo apt install dos2unix
-dos2unix cw09.sh
-chmod +x cw09.sh
+dos2unix setup.sh
+chmod +x setup.sh
