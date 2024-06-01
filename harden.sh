@@ -101,3 +101,6 @@ sudo reboot
 
 # Po restarcie: Ustawienie SELinux w trybie enforcing (tę komendę należy ręcznie wykonać po restarcie)
 # sudo setenforce 1
+
+# Uruchomienie Lynis po wykonaniu hardeningu
+# sudo lynis audit system --report-file /var/log/lynis-post-hardening.log
