@@ -14,7 +14,7 @@ EOF
 sudo apt update
 
 # Instalacja wymaganych usług
-sudo apt install apache2 php libapache2-mod-php mysql-server postfix openssh-server openvpn fail2ban -y
+sudo apt install apache2 php libapache2-mod-php mariadb-server postfix openssh-server openvpn fail2ban -y
 
 # Konfiguracja Apache z trzema wirtualnymi hostami
 sudo mkdir -p /var/www/site1 /var/www/site2 /var/www/site3
