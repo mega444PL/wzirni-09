@@ -1,18 +1,5 @@
 #!/bin/bash
 
-# Wyłączenie źródła CD-ROM w pliku sources.list
-sudo sed -i '/^deb cdrom:/s/^/#/' /etc/apt/sources.list
-
-# Dodanie repozytoriów sieciowych (przykładowe dla Debian 12, Bookworm)
-sudo tee /etc/apt/sources.list.d/bookworm.list <<EOF
-deb http://deb.debian.org/debian/ bookworm main contrib non-free
-deb http://deb.debian.org/debian/ bookworm-updates main contrib non-free
-deb http://security.debian.org/debian-security bookworm-security main contrib non-free
-EOF
-
-# Aktualizacja listy pakietów
-sudo apt update
-
 # Instalacja wymaganych usług
 sudo apt install apache2 php libapache2-mod-php mariadb-server postfix openssh-server openvpn fail2ban -y
 
