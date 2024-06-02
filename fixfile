@@ -1,3 +1,17 @@
+# Wyłączenie źródła CD-ROM w pliku sources.list
+sudo sed -i '/^deb cdrom:/s/^/#/' /etc/apt/sources.list
+
+# Dodanie repozytoriów sieciowych (przykładowe dla Debian 12, Bookworm)
+sudo tee /etc/apt/sources.list.d/bookworm.list <<EOF
+deb http://deb.debian.org/debian/ bookworm main contrib non-free
+deb http://deb.debian.org/debian/ bookworm-updates main contrib non-free
+deb http://security.debian.org/debian-security bookworm-security main contrib non-free
+EOF
+
+# Aktualizacja listy pakietów
+sudo apt update
+
+# Naprawienie skryptów napisanych na Windowsie
 sudo apt install dos2unix
 dos2unix setup.sh
 chmod +x setup.sh
